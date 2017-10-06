@@ -1,4 +1,4 @@
-<style>
+<style lang="scss">
 //@extend-elements
 %inner-before-after {
   display: block;
