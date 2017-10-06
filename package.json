@@ -1,6 +1,6 @@
 {
   "name": "vue-on-off",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue on-off switch component",
   "main": "index.vue",
   "scripts": {
