@@ -1,0 +1,25 @@
+{
+  "name": "vue-on-off",
+  "version": "1.0.0",
+  "description": "Vue on-off switch component",
+  "main": "index.vue",
+  "scripts": {
+    "test": "echo 'Test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onefivefournine/vue-on-off.git"
+  },
+  "keywords": [
+    "Vue",
+    "switch",
+    "on-off",
+    "component"
+  ],
+  "author": "onefivefournine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onefivefournine/vue-on-off/issues"
+  },
+  "homepage": "https://github.com/Onefivefournine/vue-on-off#readme"
+}
