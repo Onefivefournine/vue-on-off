@@ -130,7 +130,6 @@ export default Vue.extend( {
       this.$emit( 'input', val )
       this.action()
     }
-  },
-  template
+  }
 } );
 </script>
