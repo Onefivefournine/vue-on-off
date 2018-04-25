@@ -1,5 +1,8 @@
 <style scoped>
-.onoffswitch-inner:before,
+.switch {
+    display: inline-block;
+}
+
 .onoffswitch-inner:after {
     display: block;
     float: left;
@@ -24,20 +27,8 @@
     display: none;
 }
 
-.onoffswitch-checkbox+.onoffswitch-label {
-    border: 1px solid #e1e4ec;
-    -webkit-transition: border 0.3s ease-in-out;
-    transition: border 0.3s ease-in-out;
-}
-
-.onoffswitch-checkbox:checked+.onoffswitch-label {
-    border: 1px solid #6ae2a2;
-    -webkit-transition: border 0.3s ease-in-out;
-    transition: border 0.3s ease-in-out;
-}
-
-.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner:after {
+    background-color: #6ae2a2;
 }
 
 .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
@@ -45,12 +36,11 @@
 }
 
 .onoffswitch-checkbox[disabled]+.onoffswitch-label {
-    border: 1px solid #e1e4ec;
     cursor: not-allowed;
 }
 
-.onoffswitch-checkbox[disabled]+.onoffswitch-label .onoffswitch-inner:before {
-    background-color: #a3a6b2;
+.onoffswitch-checkbox[disabled]+.onoffswitch-label .onoffswitch-inner:after {
+    background-color: #dedede;
 }
 
 .onoffswitch-label {
@@ -58,39 +48,34 @@
     overflow: hidden;
     cursor: pointer;
     margin-bottom: 0;
-    border: 1px solid #6ae2a2;
     border-radius: 100px;
 }
 
 .onoffswitch-inner {
     display: block;
     width: 200%;
-    margin-left: -100%;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
-.onoffswitch-inner:before {
-    content: " ";
-    background-color: #6ae2a2;
-}
-
 .onoffswitch-inner:after {
-    content: " ";
+    content: ' ';
     background-color: #e1e4ec;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .onoffswitch-switch {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     margin: 2px 0 0;
     background: #fff;
     border-radius: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 28px;
+    right: 30px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -99,6 +84,7 @@
     <div class="switch">
         <div class="onoffswitch">
             <input type="checkbox"
+                :disabled="disabled"
                 class="onoffswitch-checkbox"
                 v-model="innerModel"
                 @change="changeHandler"
@@ -117,10 +103,14 @@ export default Vue.extend({
     data() {
         return {
             innerModel: this.value
-        }
+        };
     },
     props: {
         value: {
+            default: false
+        },
+        disabled: {
+            type: Boolean,
             default: false
         },
         action: {
@@ -136,7 +126,7 @@ export default Vue.extend({
     watch: {
         value(val) {
             this.innerModel = val;
-        },
+        }
     },
     methods: {
         changeHandler() {

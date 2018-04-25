@@ -31,7 +31,7 @@ const app = new Vue( {
 		return {
 			model:false
 		}
-	}
+	},
 	methods:{
 		modelChangeHandler(){
 			/*
