@@ -84,13 +84,13 @@
     <div class="switch">
         <div class="onoffswitch">
             <input type="checkbox"
-                :disabled="disabled"
-                class="onoffswitch-checkbox"
-                v-model="innerModel"
-                @change="changeHandler"
-                :id="randomId">
+                   :disabled="disabled"
+                   class="onoffswitch-checkbox"
+                   v-model="innerModel"
+                   @change="changeHandler"
+                   :id="randomId">
             <label class="onoffswitch-label"
-                :for="randomId">
+                   :for="randomId">
                 <span class="onoffswitch-inner"></span>
                 <span class="onoffswitch-switch"></span>
             </label>
@@ -98,8 +98,7 @@
     </div>
 </template>
 <script>
-import Vue from 'vue';
-export default Vue.extend({
+export default {
     data() {
         return {
             innerModel: this.value
@@ -115,12 +114,12 @@ export default Vue.extend({
         },
         action: {
             type: Function,
-            default: function() {}
+            default () {}
         }
     },
     computed: {
         randomId() {
-            return 'onOff-' + (Math.random() * 1e9).toFixed();
+            return `onOff-${(Math.random() * 1e9).toFixed()}`;
         }
     },
     watch: {
@@ -135,5 +134,5 @@ export default Vue.extend({
             if (this.action && typeof this.action === 'function') this.action();
         }
     }
-});
+};
 </script>

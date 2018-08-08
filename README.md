@@ -19,31 +19,32 @@ git clone https://github.com/Onefivefournine/vue-on-off.git
 ```
 
 ### Usage
+
 ```javascript
 // register locally
 import onOff from 'vue-on-off';
 
-const app = new Vue( {
-	components:{
-		onOff
-	},
-	data(){
-		return {
-			model:false
-		}
-	},
-	methods:{
-		modelChangeHandler(){
-			/*
+const app = new Vue({
+  components: {
+    onOff
+  },
+  data() {
+    return {
+      model: false
+    };
+  },
+  methods: {
+    modelChangeHandler() {
+      /*
 			* some API request or other actions,
 			* you DON'T need to set model = !model
 			*/
-		}
-	}
-} );
+    }
+  }
+});
 
-// register globally
-Vue.component('onOff',onOff);
+// OR register globally
+Vue.component('onOff', onOff);
 ```
 
 ```html

@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/Onefivefournine/vue-on-off#readme",
   "dependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.5.17"
   }
 }
